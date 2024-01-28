@@ -1,0 +1,50 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.body-content{
+    margin: 2%;
+    background-color: lightskyblue;
+    border: 1px solid black;
+    height: 100%;
+}
+.nav-container {
+    width: auto;
+    height: 25%;
+    overflow: hidden;
+}
+.nav-container .nav-upper{
+    background-color: black;
+    color: #fff;
+    padding: 2% 0;
+    text-align: center;
+}
+.nav-container .nav-lower{
+    border-bottom: 1px solid black;
+    text-align: center;
+    padding: 1% 0;
+}
+.main-container {
+    width: auto;
+    height: 100vh;
+    overflow: hidden;
+}
+.main-container .main-aside {
+    width: 25%;
+    float: left;
+    border-right: 1px solid black;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+.main-container .main-main{
+    width: 75%;
+    text-align: center;
+    height: 100%;
+    overflow: hidden;
+}
