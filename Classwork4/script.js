@@ -7,32 +7,50 @@
 Call your functions at the bottom of your script with test data to show that they work by printing the output to console.log. Please leave a link to your html file on the codd server in the text box.
  */
 
-// Constructor that holds movie data
-function Movie(title, duration, stars, rating, viewed) {
-    this.title = title;
-    this.duration = duration;
-    this.stars = stars;
-    this.rating = rating;
-    this.viewed = viewed;
+// Class that holds movie data
+class Movie {
+    constructor(title, duration, stars, rating, viewed) {
+        this.title = title;
+        this.duration = duration;
+        this.stars = stars;
+        this.rating = rating;
+        this.viewed = viewed;
+    }
 }
 
 // Creates objects for 5 movies
-movie1 = new Movie('The Martian', 1.44, ['Matt Damon', 'Jessica Chastain', 'Kristen Wiig'], 4.5, true);
-movie2 = new Movie('Limitless', 1.05, ['Bradley Cooper', 'Robert De Niro', 'Abbie Cornish'], 4.5, true);
-movie3 = new Movie('Balance', .07, ['Margarita Terekhova', 'Armen Dzhigarkhanyan', 'Alla Demidova'], 4.5, true);
-movie4 = new Movie('Broker', 2.09, ['Kang-ho Song', 'Sang-kyung Kim', 'Roe-ha Kim'], 4.5, true);
-movie5 = new Movie('Goofy Gymnastics', .07, ['Pinto Colvig', 'Walt Disney'], 4.5, true);
+let movie1 = new Movie('The Martian', 1.44, ['Matt Damon', 'Jessica Chastain', 'Kristen Wiig'], 4.5, true);
+let movie2 = new Movie('Limitless', 1.05, ['Bradley Cooper', 'Robert De Niro', 'Abbie Cornish'], 4.5, true);
+let movie3 = new Movie('Balance', 0.07, ['Margarita Terekhova', 'Armen Dzhigarkhanyan', 'Alla Demidova'], 3, true);
+let movie4 = new Movie('Broker', 2.09, ['Kang-ho Song', 'Sang-kyung Kim', 'Roe-ha Kim'], 4.5, false);
+let movie5 = new Movie('Goofy Gymnastics', 0.07, ['Pinto Colvig', 'Walt Disney'], 4.5, false);
 
 // This array holds the 5 movies
 const movies = [movie1, movie2, movie3, movie4, movie5];
 
 // Function for finding short films
-function isShortFilmFinder() {
+function isShortFilm() {
     let shortFilms = [];
-    for (let i = 0; i < movies.length; i++) {
-        if (movies[i].duration < .40) {
-            shortFilms.push(movies[i].title);
+    for (let movie of movies) {
+        if (movie.duration < 0.40) {
+            return true;
         }
     }
     return shortFilms;
 }
+
+// Function for finding critic's pick
+function criticsPick() {
+    let criticsPicks = [];
+    for (let movie of movies) {
+        if (movie.rating > 4 && movie.viewed === false) {
+            criticsPicks.push(movie.title);
+        }
+    }
+    return criticsPicks;
+}
+
+// Print out the list of short films
+console.log("Short films: ", isShortFilm() );
+// Print out the list of critic's picks
+console.log("Critic's picks: ", criticsPick() );
