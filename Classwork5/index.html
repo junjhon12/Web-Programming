@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <div class="button-container">
+        <button id="red" onclick="changeColor('red')">Red</button>
+        <button id="yellow" onclick="changeColor('yellow')">Yellow</button>
+        <button id="green" onclick="changeColor('green')">Green</button>
+        <button id="black" onclick="changeColor('black')">Black</button>
+        <button id="random" onclick="changeRandom()">Random</button>
+    </div>
+    <div id="image-container">
+        <div class="image-box">
+            <img id="image" src="./images/Black.jpg">
+        </div>
+        <div class="img-button-container">
+            <button id="previous" onclick="previousImage()">Previous</button>
+            <button id="next" onclick="nextImage()">Next</button>
+        </div>        
+    </div>
+
+    <footer>
+        <script src="./script.js"></script>
+    </footer>
+</body>
+</html>
+
+<!--
+    Requirement:
+    1) 5 buttons (red, yellow, green, black, and random) that changes the background color to the coresponding color.
+    2) Create a page that shows one image at a time, with button near it that's title next. Upon clicking next, the next image in the array should be presented.
+    3)Both features must be on the same webpage
+
+    creating array example:
+    let picArray = ["exampl1.jpg", "example2.jpg", "example.3jpg", "example4.jpg"]
+
+    Creating functionality example:
+    function changeBrown() {
+        guitarPicture = document.getElementById("guitarpic");
+        guitarPicture.src = picArray[2];
+        pagetitle.style.color = "red";
+        guitarPicture.src = picArray[2];
+    }
+-->

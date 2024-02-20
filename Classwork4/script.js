@@ -33,7 +33,7 @@ function isShortFilm() {
     let shortFilms = [];
     for (let movie of movies) {
         if (movie.duration < 0.40) {
-            return true;
+            shortFilms.push(movie.title);
         }
     }
     return shortFilms;
