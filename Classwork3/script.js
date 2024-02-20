@@ -60,5 +60,4 @@ function guessLetter(letter) {
     if (tries >= Math.ceil(wordLetters.length/2)) {
         console.log('Sorry, you lost.');
     }
-    
 }
