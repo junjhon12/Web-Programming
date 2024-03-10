@@ -1,0 +1,156 @@
+@import url('./fonts/Figtree-Italic-VariableFont_wght.ttf');
+@import url('./fonts/Figtree-VariableFont_wght.ttf');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Figtree', sans-serif, 'Figtree-Italic', sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: hsl(47, 88%, 63%);
+    font-size: 16px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25rem;
+    height: auto;
+    padding: 1rem;
+    border: 2px solid black;
+    border-radius: 30px;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 10px 10px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+    line-height: 1.5;
+}
+
+.card-top {
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.card-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.card-bot {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-info .info-top {
+    width: 6rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: hsl(47, 88%, 63%);
+    border-radius: 5px;
+    font-weight: 800;
+}
+
+.main-title {
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 1rem 0;
+    width: 21rem;
+    background-color: hsl(0, 0%, 100%);
+    border: none;
+    font-family: 'Figtree-Italic', sans-serif;
+}
+
+.main-title:hover {
+    color: hsl(47, 88%, 63%);
+    cursor: pointer;
+    border: none;
+}
+
+.description {
+    font-size: 16px;
+    color: hsl(0, 0%, 50%);
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.author img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.author .name {
+    font-weight: 800;
+    line-height: 4;
+}
+
+@media (max-width: 375px) {
+    .card {
+        width: 20rem;
+        height: auto;
+        border-radius: 30px;
+    }
+
+    .card-content {
+        padding: 1rem;
+    }
+
+    .info-top {
+        font-size: 12px;
+    }
+
+    .info-bot {
+        font-weight: 600;
+        font-size: 12px;
+    }
+
+    .card-info {
+        padding: 10rem;
+        font-size: 15px;
+    }
+
+    .main-title {
+        width: auto;
+        font-size: 17px;
+    }
+
+    .description {
+        font-size: 12px;
+    }
+
+    .author img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .author .name {
+        font-size: 12px;
+    }
+}
