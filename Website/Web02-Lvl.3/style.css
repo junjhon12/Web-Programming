@@ -1,0 +1,432 @@
+@import url('./fonts/outfit/Outfit-VariableFont_wght.ttf');
+@import url('./fonts/young-serif/YoungSerif-Regular.ttf');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif, 'YoungSerif', sans-serif;
+}
+
+h2 {
+    color: hsl(14, 45%, 36%);
+}
+
+h3 {
+    color: hsl(332, 51%, 32%);
+}
+
+body {
+    background-color: hsl(30, 54%, 90%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-weight: 500;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50rem;
+    background-color: hsl(0, 0%, 100%);
+    padding: 2rem 2rem;
+    margin: 5rem;
+    border-radius: 30px;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.contentOne {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.contentOne .description {
+    padding: 0 0 2rem 0;
+    line-height: 1.5;
+    font-size: 18px;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+.contentTwo {
+    background-color: hsl(330, 100%, 98%);
+    border-radius: 10px;
+}
+
+.contentOne .title {
+    font-size: 3rem;
+    font-family: 'Yo';
+}
+
+.contentTwo h3 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    padding: 1rem 1rem 0rem 1rem;
+}
+
+.contentTwo ul {
+    padding: 1rem 3rem;
+}
+
+.contentTwo li {
+    font-size: 1rem;
+    padding: 0 1rem;
+    line-height: 2;
+}
+
+.contentTwo li b {
+    font-weight: 800;
+}
+
+.contentThree {
+    border-bottom: 1px solid hsl(0, 0%, 80%);
+    padding: 1rem 0;
+}
+
+.contentThree ul {
+    padding: 0 1.5rem;
+}
+
+.contentThree li {
+    font-size: 1rem;
+    padding: 0 1rem;
+    line-height: 2;
+}
+
+.contentFour {
+    border-bottom: 1px solid hsl(0, 0%, 80%);
+    padding: 1rem 0;
+}
+
+.contentFour ol {
+    padding: 0 1.5rem;
+}
+
+.contentFour li::marker {
+    color: hsl(14, 45%, 36%);
+    font-weight: 900;
+}
+
+.contentFour li {
+    font-size: 1rem;
+    padding: 0 1rem;
+    line-height: 2;
+}
+
+.contentFour li b {
+    font-weight: 800;
+}
+
+.contentFive {
+    padding: 1rem 0;
+}
+
+.contentFive .text {
+    line-height: 2;
+}
+
+.contentFive table {
+    text-align: left;
+    margin: 1rem;
+}
+
+.contentFive td{
+    width: 100vw;
+    border-bottom: 1px solid hsl(0, 0%, 80%);
+    text-align: left;
+    padding: 1rem;
+}
+
+.contentFive th {
+    width: 100vw;
+    text-align: left;
+    padding: 1rem;
+}
+.value {
+    color: hsl(14, 45%, 36%);
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+}
+
+@media (max-width: 1440px) {
+    * {
+        font-family: 'Outfit', sans-serif, 'YoungSerif', sans-serif;
+    }
+
+    h2 {
+        color: hsl(14, 45%, 36%);
+    }
+
+    h3 {
+        color: hsl(332, 51%, 32%);
+    }
+
+    body {
+        background-color: hsl(30, 54%, 90%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 50rem;
+        background-color: hsl(0, 0%, 100%);
+        padding: 2rem 2rem;
+        margin: 5rem;
+        border-radius: 30px;
+    }
+
+    .img {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 30px;
+    }
+
+    .img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 30px;
+    }
+
+    .contentOne {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .contentOne .description {
+        padding: 0 0 2rem 0;
+        line-height: 1;
+    }
+
+    .title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 1rem 0;
+    }
+
+    .contentTwo {
+        background-color: hsl(330, 100%, 98%);
+        border-radius: 10px;
+    }
+
+    .contentOne .title {
+        font-size: 3rem;
+        font-family: 'Yo';
+    }
+
+    .contentTwo h3 {
+        font-size: 1.2rem;
+        font-weight: 800;
+        padding: 1rem 1rem 0rem 1rem;
+    }
+
+    .contentTwo ul {
+        padding: 1rem 3rem;
+    }
+
+    .contentTwo li {
+        font-size: 1rem;
+        padding: 0 1rem;
+        line-height: 2;
+    }
+
+    .contentTwo li b {
+        font-weight: 800;
+    }
+
+    .contentThree {
+        border-bottom: 1px solid hsl(0, 0%, 80%);
+        padding: 1rem 0;
+    }
+
+    .contentThree ul {
+        padding: 0 1.5rem;
+    }
+
+    .contentThree li {
+        font-size: 1rem;
+        padding: 0 1rem;
+        line-height: 2;
+    }
+
+    .contentFour {
+        border-bottom: 1px solid hsl(0, 0%, 80%);
+        padding: 1rem 0;
+    }
+
+    .contentFour ol {
+        padding: 0 1.5rem;
+    }
+
+    .contentFour li::marker {
+        color: hsl(14, 45%, 36%);
+        font-weight: 900;
+    }
+
+    .contentFour li {
+        font-size: 1rem;
+        padding: 0 1rem;
+        line-height: 2;
+    }
+
+    .contentFour li b {
+        font-weight: 800;
+    }
+
+    .contentFive {
+        padding: 1rem 0;
+    }
+
+    .contentFive .text {
+        line-height: 2;
+    }
+
+    .contentFive table {
+        text-align: left;
+        margin: 1rem;
+    }
+
+    .contentFive td {
+        width: 100vw;
+        border-bottom: 1px solid hsl(0, 0%, 80%);
+        text-align: left;
+        padding: 1rem;
+    }
+
+    .value {
+        color: hsl(14, 45%, 36%);
+        font-weight: 700;
+        font-family: 'Outfit', sans-serif;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-size: 0.996rem;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: hsl(0, 0%, 100%);
+        padding: 0 1rem;
+        margin: 0;
+        border-radius: 0;
+    }
+    .container {
+        margin: 0 0.5rem;
+    }
+    .img {
+        width: 100vw;
+        height: 100%;
+        border-radius: 0;
+    }
+    .img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0;
+    }
+    .contentOne .title {
+        font-size: 2.5rem;
+    }
+    .contentOne .description {
+        padding: 0 0 2rem 0;
+        line-height: 1.5;
+    }
+    .contentTwo h3 {
+        font-size: 1.2rem;
+        font-weight: 800;
+        padding: 1rem 1rem 0 1rem;
+    }
+    .contentTwo ul {
+        padding: 1rem 3rem;
+    }
+    .contentTwo li {
+        font-size: 1rem;
+        padding: 0.5rem;
+        line-height: 1.5;
+    }
+    .contentTwo li b {
+        font-weight: 800;
+    }
+    .contentThree ul {
+        padding: 0 1.5rem;
+    }
+    .contentThree li {
+        font-size: 1rem;
+        padding: 0 1rem;
+        line-height: 2;
+    }
+    .contentFour ol {
+        padding: 0 1.5rem;
+    }
+    .contentFour li::marker {
+        color: hsl(14, 45%, 36%);
+        font-weight: 900;
+    }
+    .contentFour li {
+        font-size: 1rem;
+        padding: 0 1rem;
+        line-height: 2;
+    }
+    .contentFour li b {
+        font-weight: 800;
+    }
+    .contentFive .text {
+        line-height: 2;
+    }
+    .contentFive table {
+        text-align: left;
+        margin: 1rem;
+    }
+    .contentFive td {
+        width: 100%;
+        border-bottom: 1px solid hsl(0, 0%, 80%);
+        text-align: left;
+        padding: 1rem;
+    }
+    .value {
+        color: hsl(14, 45%, 36%);
+        font-weight: 700;
+        font-family: 'Outfit', sans-serif;
+    }
+}
