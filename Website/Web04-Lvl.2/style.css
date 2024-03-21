@@ -1,0 +1,12 @@
+@import url('./fonts/WorkSans-VariableFont_wght.ttf');
+@import url('./fonts/WorkSans-Italic-VariableFont_wght.ttf');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.body {
+    background-image: linear-gradient(to bottom), url("./images/background-pattern-desktop.svg");
+}
