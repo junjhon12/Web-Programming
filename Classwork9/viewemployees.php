@@ -13,7 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<!-- Your HTML form goes here -->
 <form method="POST" action="viewemployees.php">
     <label for="employee_name">Employee Name:</label>
     <input type="text" name="employee_name" id="employee_name" required><br>
