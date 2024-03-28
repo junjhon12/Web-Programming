@@ -32,7 +32,6 @@ if($emp_id && $emp_name && $job_title && $hire_date && $salary && $dept_id) {
 }
 
 // Link to newemployee.php on the CODD server
-$new_employee_link = "http://CODD_SERVER/newemployee.php";
-
+$new_employee_link = "http://CODD_SERVER/newemployee.php"
 
 ?>
