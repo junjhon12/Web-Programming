@@ -1,42 +1,78 @@
 <?php
-
-# Connect to the database
-$servername = "localhost";
+$host = "localhost";
 $username = "qle17";
 $password = "qle17";
-$database_name = "qle17";
+$dbname = "qle17";
 
-# Create a connection to the database
-$connection = new mysqli($servername, $username, $password, $database_name);
-
-# Check the connection to the database
-if ($connection -> connect_error) {
-    die("Connection failed: " . $connection -> connect_error);
-} else {
-    echo "Connected successfully";
+$conn = new mysqli($host, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
-# Retrieve the values from the employees table with department information
-$sql = "SELECT employees.emp_id, employees.emp_name, employees.job_title, employees.hire_date, employees.salary, departments.dept_name FROM employees JOIN departments ON employees.dept_id = departments.dept_id";
+// Insert data from the form
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $emp_id = $_POST["emp_id"];
+    $emp_name = $_POST["emp_name"];
+    $job_title = $_POST["job_title"];
+    $hire_date = $_POST["hire_date"];
+    $salary = $_POST["salary"];
+    $dept_id = $_POST["dept_id"];
 
-# Execute the SQL query
-$result = $connection -> query($sql);
+    $sql = "INSERT INTO employees (emp_id, emp_name, job_title, hire_date, salary, dept_id)
+    VALUES (0, A, B, 0, 0, 0)";
 
-# Check if the query was successful
-if ($result -> num_rows > 0) {
-    # Output the data from the query
-    while ($row = $result -> fetch_assoc()) {
+    if ($conn->query($sql) === TRUE) {
+        echo "New employee record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+// Retrieve and display all employee data
+$sql = "SELECT * FROM employees";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
         echo "Employee ID: " . $row["emp_id"] . "<br>";
         echo "Employee Name: " . $row["emp_name"] . "<br>";
         echo "Job Title: " . $row["job_title"] . "<br>";
         echo "Hire Date: " . $row["hire_date"] . "<br>";
         echo "Salary: " . $row["salary"] . "<br>";
-        echo "Department Name: " . $row["dept_name"] . "<br><br>";
+        echo "Department ID: " . $row["dept_id"] . "<br><br>";
     }
 } else {
-    echo "0 results";
+    echo "No employees found";
 }
 
-# Close the connection to the database
-$connection -> close();
+// Department Table
+$sql = "CREATE TABLE Departments (
+    dept_id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    dept_name VARCHAR(30) NOT NULL,
+    )";
+    
+$sqk = "CREATE TABLE Employee (
+    emp_id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    emp_name VARCHAR(30) NOT NULL,
+    job_title VARCHAR(30) NOT NULL,
+    hire_date DATE NOT NULL,
+    salary DECIMAL(10,2) NOT NULL,
+    dept_id INT(6) UNSIGNED NOT NULL,
+    FOREIGN KEY (dept_id) REFERENCES Departments(dept_id)
+    )";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Table Departments created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+if ($conn->query($sql) === TRUE) {
+    echo "Table Employee created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+$conn->close();
 ?>
