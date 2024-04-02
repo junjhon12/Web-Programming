@@ -5,7 +5,7 @@ session_start();
 $mysqli = new mysqli('localhost', 'qle17', 'qle17', 'qle17');
 
 // Check connection
-if ($mysqli->connect_errno) {
+if ($mysqli->connect_error) {
     echo "Failed to connect to MySQL: " . $mysqli->connect_error;
     exit();
 }

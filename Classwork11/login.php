@@ -1,8 +1,3 @@
-<!-- 
-Please add a log in page that asks for a username and password before you get to the form to enter the Employee data.
-
-Create a user table that will store a user_id, username and password. If your username and password don't match what you have in the database you should redirect the user to the log in page. If the user name and password work then the user should be able to enter employee details. You should use a session variable to mark that the user is authenticated. Use the md5 function in PHP so that you do not store a plaintext version of the password. Please include the working username and password in your submission.
--->
 <?php
 session_start();
 
@@ -10,7 +5,7 @@ session_start();
 $mysqli = new mysqli('localhost', ' qle17', 'qle17', 'qle17');
 
 // Check connection
-if ($mysqli->connect_errno) {
+if ($mysqli->connect_error) {
     echo "Failed to connect to MySQL: " . $mysqli->connect_error;
     exit();
 }
