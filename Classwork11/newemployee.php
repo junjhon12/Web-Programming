@@ -5,6 +5,14 @@
 </head>
 <body>
     <h1>New Employee Form</h1>
+    <?php
+    // This code checks if the user is authenticated, if not, it redirects to the login page
+    session_start();
+    if (!isset($_SESSION['authenticated']) || !$_SESSION['authenticated']) {
+        header("Location: login.php");
+        exit();
+    }
+    ?>
     <form method="POST" action="viewemployees.php">
         <label for="emp_id">Employee ID:</label>
         <input type="number" name="emp_id" required><br>
