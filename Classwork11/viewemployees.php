@@ -1,7 +1,6 @@
 <?php
-session_start();
-
 // Connect to the database
+start_session();
 $mysqli = new mysqli('localhost', 'qle17', 'qle17', 'qle17');
 
 // Check connection
@@ -49,7 +48,21 @@ if ($mysqli->query($sql) === TRUE) {
     echo "Error creating table: " . $mysqli->error;
 }
 
+if (isset($_POST('register'))) {
+    $username = $_POST['username'];
+    $password = md5($_POST['password']);
+    $sql = "INSERT INTO User (username, password) VALUES ('$username', '$password')";
+    $result = $mysqli->query($sql);
+    if ($result) {
+        header("Location: login.php");
+        exit();
+    } else {
+        echo "Error creating user account: " . $mysqli->error;
+    }
+}
+
 $sql = "INSERT INTO User (username, password) VALUES ('qle17', 'qle17')";
+$result = $mysqli->query($sql);
 
 // Query to fetch all employee data and their department
 $query = "SELECT e.emp_id, e.emp_name, e.job_title, e.hire_date, e.salary, d.name AS department_name
@@ -58,22 +71,4 @@ $query = "SELECT e.emp_id, e.emp_name, e.job_title, e.hire_date, e.salary, d.nam
 
 // Execute the query
 $result = $mysqli->query($query);
-
-// Check if the query was successful
-if ($result) {
-    // Print out the employee data and their department
-    while ($row = $result->fetch_assoc()) {
-        echo "Employee ID: " . $row['emp_id'] . "<br>";
-        echo "Employee Name: " . $row['emp_name'] . "<br>";
-        echo "Job Title: " . $row['job_title'] . "<br>";
-        echo "Hire Date: " . $row['hire_date'] . "<br>";
-        echo "Salary: " . $row['salary'] . "<br>";
-        echo "Department: " . $row['department_name'] . "<br><br>";
-    }
-} else {
-    echo "Error executing query: " . $mysqli->error;
-}
-
-// Close the database connection
-$mysqli->close();
 ?>
